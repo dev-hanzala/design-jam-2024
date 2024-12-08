@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
+import Picks from "@/components/Picks";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
             suspension, floor and table lights.
           </p>
         </div>
+        <Picks />
       </div>
     </div>
   );
