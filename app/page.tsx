@@ -4,16 +4,17 @@ import Featured from "@/components/Featured";
 import Picks from "@/components/Picks";
 import NewArrivals from "@/components/NewArrivals";
 import FeaturedBlogs from "@/components/FeaturedBlogs";
+import RoundedButton from "@/components/RoundedButton";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <Featured />
-      <div className="flex flex-col justify-center items-center w-full py-16">
-        <div className="flex flex-col justify-center items-center gap-3">
-          <p className="font-medium text-4xl text-center">Top Picks For You</p>
-          <p className="font-medium text-center">
+      <div className="flex w-full flex-col items-center justify-center py-16">
+        <div className="flex flex-col items-center justify-center gap-3">
+          <p className="text-center text-4xl font-medium">Top Picks For You</p>
+          <p className="text-center font-medium">
             Find a bright ideal to suit your taste with our great selection of
             suspension, floor and table lights.
           </p>
@@ -22,6 +23,16 @@ const Home = () => {
       </div>
       <NewArrivals />
       <FeaturedBlogs />
+      <div
+        className="flex h-[450px] w-full flex-col items-center justify-center gap-[18px] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/Instagram/instagram.png)" }}
+      >
+        <div className="flex flex-col justify-center items-center gap-3">
+          <p className="text-cente font-bold text-6xl">Our Instagram</p>
+          <p className="text-center text-xl">Follow our store on Instagram</p>
+        </div>
+        <RoundedButton>Follow Us</RoundedButton>
+      </div>
     </div>
   );
 };
