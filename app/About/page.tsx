@@ -2,9 +2,7 @@ import SectionTop from "@/components/SectionTop";
 import Image from "next/image";
 import Specialty from "@/components/Specialty";
 import Next from "@/components/Next";
-import { text } from "stream/consumers";
 import UnderlinedButton from "@/components/UnderlinedButton";
-import { title } from "process";
 
 export default function Contact() {
   const blogs = [
