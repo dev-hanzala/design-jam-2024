@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import Picks from "@/components/Picks";
+import NewArrivals from "@/components/NewArrivals";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         </div>
         <Picks />
       </div>
+      <NewArrivals />
     </div>
   );
 };
