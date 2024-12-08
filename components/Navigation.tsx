@@ -4,9 +4,9 @@ import Link from "next/link";
 const Navigation = () => {
   const navItems = [
     { name: "Home", url: "/" },
-    { name: "Shop", url: "/" },
-    { name: "About", url: "/About" },
-    { name: "Contact", url: "/" },
+    { name: "Shop", url: "/shop" },
+    { name: "About", url: "/about" },
+    { name: "Contact", url: "/contact" },
   ];
 
   return (
