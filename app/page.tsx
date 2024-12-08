@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import Picks from "@/components/Picks";
 import NewArrivals from "@/components/NewArrivals";
+import FeaturedBlogs from "@/components/FeaturedBlogs";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <Picks />
       </div>
       <NewArrivals />
+      <FeaturedBlogs />
     </div>
   );
 };
