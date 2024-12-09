@@ -4,7 +4,7 @@ import Specialty from "@/components/Specialty";
 import Next from "@/components/Next";
 import UnderlinedButton from "@/components/UnderlinedButton";
 
-export default function About() {
+export default function Blog() {
   const blogs = [
     {
       image: "/blog-lg-1.png",
