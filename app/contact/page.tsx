@@ -38,7 +38,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start justify-center gap-4">
-              <Image src={"/lloca.svg"} width={28} height={28} alt="" />
+              <Image src={"/clock.svg"} width={28} height={28} alt="" />
               <div>
                 <p className="text-2xl font-semibold">Working Time</p>
                 <p className="w-[212px]">

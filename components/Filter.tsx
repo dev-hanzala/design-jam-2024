@@ -5,29 +5,28 @@ const Filter = () => {
   return (
     <div className="flex items-center justify-between bg-[#FAF4F4] px-24 py-8">
       <div className="flex items-center">
+        <div className="pr-3" />
         <Image
-          className="pr-3"
           src={"/filter/filter.svg"}
-          width={25}
-          height={25}
+          width={28}
+          height={28}
           alt={""}
         />
         <p className="pr-6 text-xl">Filter</p>
         <Image
-          className="pr-6"
           src={"/filter/grid.svg"}
-          width={40}
-          height={40}
+          width={28}
+          height={28}
           alt={""}
         />
+        <div className="pr-6" />
         <Image
-          className="pr-[20px]"
           src={"/filter/list.svg"}
           width={28}
           height={28}
           alt={""}
         />
-        <p className="border-l border-black pl-[34px]">
+        <p className="border-l border-black pl-14">
           Showing 1 to 16 of 32 results
         </p>
       </div>
