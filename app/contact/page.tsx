@@ -1,6 +1,7 @@
+import Image from "next/image";
+import React from "react";
 import SectionTop from "@/components/SectionTop";
 import Specialty from "@/components/Specialty";
-import Image from "next/image";
 
 export default function Contact() {
   return (
@@ -38,7 +39,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start justify-center gap-4">
-              <Image src={"/lloca.svg"} width={28} height={28} alt="" />
+              <Image src={"/clock.svg"} width={28} height={28} alt="" />
               <div>
                 <p className="text-2xl font-semibold">Working Time</p>
                 <p className="w-[212px]">
@@ -72,7 +73,9 @@ export default function Contact() {
               type="text"
               placeholder="Hi! I'd like to ask about"
             />
-            <button className="mt-9 rounded-[10px] border border-black p-4">Submit</button>
+            <button className="mt-9 rounded-[10px] border border-black p-4">
+              Submit
+            </button>
           </div>
         </div>
       </div>

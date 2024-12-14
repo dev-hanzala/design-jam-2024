@@ -1,28 +1,29 @@
+import Image from "next/image";
 import React from "react";
 import UnderlinedButton from "./UnderlinedButton";
-import Image from "next/image";
+
+const blogs = [
+  {
+    image: "/FeaturedBlogs/blog-1.png",
+    title: "Going all-in with millennial design",
+    duration: "5 min",
+    date: "12th Oct 2022",
+  },
+  {
+    image: "/FeaturedBlogs/blog-2.png",
+    title: "Going all-in with millennial design",
+    duration: "5 min",
+    date: "12th Oct 2022",
+  },
+  {
+    image: "/FeaturedBlogs/blog-3.png",
+    title: "Going all-in with millennial design",
+    duration: "5 min",
+    date: "12th Oct 2022",
+  },
+];
 
 const FeaturedBlogs = () => {
-  const blogs = [
-    {
-      image: "/FeaturedBlogs/blog-1.png",
-      title: "Going all-in with millennial design",
-      duration: "5 min",
-      date: "12th Oct 2022",
-    },
-    {
-      image: "/FeaturedBlogs/blog-2.png",
-      title: "Going all-in with millennial design",
-      duration: "5 min",
-      date: "12th Oct 2022",
-    },
-    {
-      image: "/FeaturedBlogs/blog-3.png",
-      title: "Going all-in with millennial design",
-      duration: "5 min",
-      date: "12th Oct 2022",
-    },
-  ];
   return (
     <div className="mb-[54px] flex flex-col items-center justify-center gap-16">
       <div className="flex flex-col items-center justify-center gap-3">
@@ -44,7 +45,7 @@ const FeaturedBlogs = () => {
               <div className="flex items-center justify-center gap-5">
                 <div className="flex gap-2">
                   <Image
-                    src={"/FeaturedBlogs/time.svg"}
+                    src="/FeaturedBlogs/time.svg"
                     width={18}
                     height={18}
                     alt=""
@@ -53,7 +54,7 @@ const FeaturedBlogs = () => {
                 </div>
                 <div className="flex gap-2">
                   <Image
-                    src={"/FeaturedBlogs/date.svg"}
+                    src="/FeaturedBlogs/date.svg"
                     width={22}
                     height={22}
                     alt=""

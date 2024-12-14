@@ -1,14 +1,16 @@
-import React from "react";
-import Picks from "@/components/Picks";
 import Image from "next/image";
+import Picks from "@/components/Picks";
+import React from "react";
+
+const smImages = [
+  "/Details/sm-1.png",
+  "/Details/sm-2.png",
+  "/Details/sm-3.png",
+  "/Details/sm-4.png",
+];
+
 
 const Details = () => {
-  const smImages = [
-    "/Details/sm-1.png",
-    "/Details/sm-2.png",
-    "/Details/sm-3.png",
-    "/Details/sm-4.png",
-  ];
   return (
     <div className="pb-16">
       <div className="border-b border-black px-[100px]">
@@ -19,18 +21,13 @@ const Details = () => {
           <Image src="/breaccrumb.svg" width={20} height={20} alt="" />
           <p className="border-l border-black px-4">Asgaard sofa</p>
         </div>
+
         <div className="flex gap-[82px] py-[35px]">
           <div className="flex gap-8 pr-6">
-            <div className="">
+            <div>
               <div className="flex flex-col gap-8">
                 {smImages.map((image, index) => (
-                  <Image
-                    key={index}
-                    src={image}
-                    width={76}
-                    height={80}
-                    alt=""
-                  />
+                  <Image key={index} src={image} width={76} height={80} alt="" />
                 ))}
               </div>
             </div>
@@ -44,38 +41,25 @@ const Details = () => {
               />
             </div>
           </div>
+
           <div className="w-1/2">
             <div className="border-b border-black pr-[180px]">
               <p className="py-4 text-5xl">Asgaard sofa</p>
               <p className="text-2xl text-[#9F9F9F]">Rs. 250,000.00</p>
               <div className="flex items-center gap-4 pt-3">
-                <Image
-                  src="/Details/stars.svg"
-                  width={124}
-                  height={20}
-                  alt=""
-                />
-                <p className="border-l border-black pl-4 text-xs">
-                  5 Customer Reviews
-                </p>
+                <Image src="/Details/stars.svg" width={124} height={20} alt="" />
+                <p className="border-l border-black pl-4 text-xs">5 Customer Reviews</p>
               </div>
               <p className="py-4 text-xs">
-                Setting the bar as one of the loudest speakers in its class, the
-                Kilburn is a compact, stout-hearted hero with a well-balanced
-                audio which boasts a clear midrange and extended highs for a
-                sound.
+                Setting the bar as one of the loudest speakers in its class, the Kilburn
+                is a compact, stout-hearted hero with a well-balanced audio which boasts
+                a clear midrange and extended highs for a sound.
               </p>
               <p className="pb-4 text-xs text-[#9F9F9F]">size</p>
               <div className="flex gap-4">
-                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FBEBB5] text-center">
-                  L
-                </div>
-                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FAF4F4] text-center">
-                  XL
-                </div>
-                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FAF4F4] text-center">
-                  XS
-                </div>
+                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FBEBB5] text-center">L</div>
+                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FAF4F4] text-center">XL</div>
+                <div className="h-[30px] w-[30px] content-center rounded-md bg-[#FAF4F4] text-center">XS</div>
               </div>
               <p className="py-4 text-xs text-[#9F9F9F]">Color</p>
               <div className="flex gap-4">
@@ -94,6 +78,7 @@ const Details = () => {
                 </div>
               </div>
             </div>
+
             <div className="flex gap-4 py-10 text-[#9F9F9F]">
               <div className="flex flex-col gap-3">
                 <p>SKU</p>
@@ -108,24 +93,9 @@ const Details = () => {
                 <div className="flex">
                   <p>: </p>
                   <div className="flex gap-6">
-                    <Image
-                      src={"/Details/fb.svg"}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
-                    <Image
-                      src={"/Details/li.svg"}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
-                    <Image
-                      src={"/Details/tw.svg"}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
+                    <Image src={"/Details/fb.svg"} width={20} height={20} alt="" />
+                    <Image src={"/Details/li.svg"} width={20} height={20} alt="" />
+                    <Image src={"/Details/tw.svg"} width={20} height={20} alt="" />
                   </div>
                 </div>
               </div>
@@ -133,6 +103,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col items-center justify-center gap-12 border-b border-black px-[100px] py-12">
         <div className="flex items-center justify-center gap-[53px]">
           <p className="text-2xl">Description</p>
@@ -159,6 +130,7 @@ const Details = () => {
           <Image src={"/sofa-right.png"} width={603} height={348} alt="" />
         </div>
       </div>
+
       <div className="flex w-full flex-col items-center justify-center py-16">
         <p className="text-center text-4xl font-medium">Related Products</p>
         <Picks />

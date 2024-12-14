@@ -5,7 +5,7 @@ import Specialty from "@/components/Specialty";
 const Account = () => {
   return (
     <div>
-      <SectionTop route={"Checkout"} />
+      <SectionTop route="Checkout" />
       <div className="flex place-items-start justify-start gap-6 px-[100px] py-16">
         <div className="w-1/2 px-[109px] py-[35px]">
           <p className="pb-9 text-4xl font-semibold">Billing Details</p>
@@ -46,48 +46,48 @@ const Account = () => {
               className="w-full rounded-[10px] border border-black p-4"
               type="text"
             />
-            <div className="flex flex-col justify-center gap-4">
-              <p className="pt-9">Town / City</p>
-              <input
-                className="w-full rounded-[10px] border border-black p-4"
-                type="text"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <p className="pt-9">Province</p>
-              <input
-                className="w-full rounded-[10px] border border-black p-4"
-                type="text"
-                placeholder="Western Province"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <p className="pt-9">ZIP code</p>
-              <input
-                className="w-full rounded-[10px] border border-black p-4"
-                type="text"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <p className="pt-9">Phone</p>
-              <input
-                className="w-full rounded-[10px] border border-black p-4"
-                type="text"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-4">
-              <p className="pt-9">Email address</p>
-              <input
-                className="w-full rounded-[10px] border border-black p-4"
-                type="text"
-              />
-            </div>
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="pt-9">Town / City</p>
             <input
-              className="mt-9 w-full rounded-[10px] border border-black p-4"
+              className="w-full rounded-[10px] border border-black p-4"
               type="text"
-              placeholder="Additional Information"
             />
           </div>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="pt-9">Province</p>
+            <input
+              className="w-full rounded-[10px] border border-black p-4"
+              type="text"
+              placeholder="Western Province"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="pt-9">ZIP code</p>
+            <input
+              className="w-full rounded-[10px] border border-black p-4"
+              type="text"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="pt-9">Phone</p>
+            <input
+              className="w-full rounded-[10px] border border-black p-4"
+              type="text"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="pt-9">Email address</p>
+            <input
+              className="w-full rounded-[10px] border border-black p-4"
+              type="text"
+            />
+          </div>
+          <input
+            className="mt-9 w-full rounded-[10px] border border-black p-4"
+            type="text"
+            placeholder="Additional Information"
+          />
         </div>
         <div className="w-1/2 px-[109px] py-[120px]">
           <div className="grid w-full grid-cols-2 grid-rows-4 border-b border-black py-6">
@@ -125,7 +125,9 @@ const Account = () => {
               throughout this website, to manage access to your account, and for
               other purposes described in our <span className="font-semibold">privacy policy</span>.
             </p>
-            <button className="mx-auto border border-black rounded-[10px] text-xl py-4 px-24">Place order</button>
+            <button className="mx-auto border border-black rounded-[10px] text-xl py-4 px-24">
+              Place order
+            </button>
           </div>
         </div>
       </div>
