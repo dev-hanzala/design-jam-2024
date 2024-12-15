@@ -20,7 +20,7 @@ const Footer = () => {
               <Link className="pb-[46px] font-medium" href={"/shop/"}>
                 Shop
               </Link>
-              <Link className="pb-[46px] font-medium" href={"/about/"}>
+              <Link className="pb-[46px] font-medium" href={"/blog/"}>
                 About
               </Link>
               <Link className="pb-[46px] font-medium" href={"/contact/"}>

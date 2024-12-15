@@ -6,7 +6,7 @@ const Filter = () => {
     <div className="flex items-center justify-between bg-[#FAF4F4] px-24 py-8">
       <div className="flex items-center">
         <Image
-          src={"/filter/filter.svg"}
+          src={"/filter.svg"}
           width={25}
           height={25}
           alt={""}
@@ -14,14 +14,14 @@ const Filter = () => {
         <div className="pr-3" />
         <p className="pr-6 text-xl">Filter</p>
         <Image
-          src={"/filter/grid.svg"}
+          src={"/grid.svg"}
           width={28}
           height={28}
           alt={""}
         />
         <div className="pr-6" />
         <Image
-          src={"/filter/list.svg"}
+          src={"/list.svg"}
           width={24}
           height={24}
           alt={""}
