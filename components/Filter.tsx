@@ -5,13 +5,13 @@ const Filter = () => {
   return (
     <div className="flex items-center justify-between bg-[#FAF4F4] px-24 py-8">
       <div className="flex items-center">
-        <div className="pr-3" />
         <Image
           src={"/filter/filter.svg"}
-          width={28}
-          height={28}
+          width={25}
+          height={25}
           alt={""}
         />
+        <div className="pr-3" />
         <p className="pr-6 text-xl">Filter</p>
         <Image
           src={"/filter/grid.svg"}
@@ -22,8 +22,8 @@ const Filter = () => {
         <div className="pr-6" />
         <Image
           src={"/filter/list.svg"}
-          width={28}
-          height={28}
+          width={24}
+          height={24}
           alt={""}
         />
         <p className="border-l border-black pl-14">
