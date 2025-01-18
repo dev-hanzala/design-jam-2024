@@ -1,36 +1,37 @@
 import React from "react";
 import UnderlinedButton from "./UnderlinedButton";
 import Listing from "./Listing";
+import { client } from "@/sanity/lib/client";
 
-const Picks = () => {
-  const picks = [
-    {
-      image: "/Products/trenton-modular-sofa.png",
-      name: "Trenton modular sofa_3",
-      price: "Rs 25,000.00",
-    },
-    {
-      image: "/Products/granite-dining-table-with-dining-chair.png",
-      name: "Granite dining table with dining chair",
-      price: "Rs 25,000.00",
-    },
-    {
-      image: "/Products/outdoor-bar-table-and-stool.png",
-      name: "Outdoor bar table and stool",
-      price: "Rs 25,000.00",
-    },
-    {
-      image: "/Products/plain-console-with-teek-mirror.png",
-      name: "Plain console with teek mirror",
-      price: "Rs 25,000.00",
-    },
-  ];
+type Item = {
+  _id: string;
+  imagePath: string;
+  name: string;
+  price: string;
+};
+
+const Picks = async () => {
+  const products: Item[] =
+    await client.fetch(`*[_type == 'product' && isFeaturedProduct][0...4]{
+      _id,
+      imagePath,
+      name,
+      price
+    }`);
+
+  const picks = products.map((product) => ({
+    id: product._id,
+    image: product.imagePath,
+    name: product.name,
+    price: product.price,
+  }));
+
   return (
     <div className="my-[100px] flex flex-col items-center justify-center gap-[69px]">
       <div className="flex items-center justify-center gap-[30px]">
         {picks.map((item) => (
           <Listing
-            key={item.name}
+            key={item.id}
             image={item.image}
             name={item.name}
             price={item.price}
