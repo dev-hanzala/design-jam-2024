@@ -20,13 +20,6 @@ export default async function Shop() {
     price
   }`);
 
-  const items = products.map((product) => ({
-    id: product._id,
-    image: product.imagePath,
-    name: product.name,
-    price: product.price,
-  }));
-
   return (
     <div>
       <SectionTop route="Shop" />
@@ -34,8 +27,14 @@ export default async function Shop() {
       <Filter />
       <div className="px-24">
         <div className="grid grid-cols-4 gap-4">
-          {items.map((item) => (
-            <Listing key={item.id} {...item} />
+          {products.map((product) => (
+            <Listing
+              key={product._id}
+              image={product.imagePath}
+              _id={product._id}
+              name={product.name}
+              price={product.price}
+            />
           ))}
         </div>
         <Next />

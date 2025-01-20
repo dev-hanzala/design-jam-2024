@@ -8,7 +8,7 @@ import RoundedButton from "@/components/RoundedButton";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Hero />
       <Featured />
       <div className="flex w-full flex-col items-center justify-center py-16">
@@ -27,13 +27,13 @@ const Home = () => {
         className="flex h-[450px] w-full flex-col items-center justify-center gap-[18px] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/Instagram/instagram.png)" }}
       >
-        <div className="flex flex-col justify-center items-center gap-3">
-          <p className="text-cente font-bold text-6xl">Our Instagram</p>
+        <div className="flex flex-col items-center justify-center gap-3">
+          <p className="text-cente text-6xl font-bold">Our Instagram</p>
           <p className="text-center text-xl">Follow our store on Instagram</p>
         </div>
         <RoundedButton>Follow Us</RoundedButton>
       </div>
-    </div>
+    </>
   );
 };
 

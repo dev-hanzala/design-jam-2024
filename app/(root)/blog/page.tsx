@@ -49,8 +49,8 @@ export default function Blog() {
   return (
     <div>
       <SectionTop route="Blog" />
-      <div className="flex items-start justify-center p-[100px]">
-        <div className="flex flex-shrink flex-col gap-[54px]">
+      <div className="flex items-start justify-center p-24">
+        <div className="flex w-full flex-grow flex-col items-center gap-[54px]">
           {blogs.map((blog, index) => (
             <BlogPost key={index} {...blog} />
           ))}
