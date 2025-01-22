@@ -1,51 +1,102 @@
-import React from 'react'
+"use client";
+import React from "react";
 import SectionTop from "@/components/SectionTop";
 import Specialty from "@/components/Specialty";
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import { useCart } from "@/components/CartProvider";
+import { CartItem } from "@/components/CartProvider";
 
 const Cart = () => {
-	return (
+  const { cartItems, total } = useCart();
+  return (
     <div>
       <SectionTop route={"Cart"} />
-      <div className="flex items-start justify-center gap-[30] px-[100px] py-16">
-        <div className="flex flex-grow flex-col gap-[55px]">
-          <div className="flex w-full justify-center bg-[#FFF9E5] px-[142px] py-4">
-            <p className="pr-[114px] font-medium">Product</p>
-            <p className="pr-[137px] font-medium">Price</p>
-            <p className="pr-9 font-medium">Quantity</p>
-            <p className="font-medium">Subtotal</p>
-          </div>
-          <div className="flex w-full items-center">
-            <div className="mr-10 w-fit bg-[#FFF9E5] text-[#9F9F9F]">
-              <Image src={"/cart-item.png"} width={106} height={106} alt="" />
-            </div>
-            <p className="pr-[69px]">Asgaard sofa</p>
-            <p className="pr-[84px]">Rs. 250,000.00</p>
-            <p className="mr-[84px] h-8 w-8 rounded-md border border-black text-center">
-              1
-            </p>
-            <p>Rs. 250,000.00</p>
+      <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-center gap-8 px-4 py-8 md:px-8 lg:flex-row lg:px-[100px] lg:py-16">
+        {/* Product Table */}
+        <div className="w-full lg:flex-grow">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px] max-w-2xl">
+              <thead>
+                <tr className="bg-[#FFF9E5]">
+                  <th className="px-2 py-4 text-center text-sm font-medium md:text-base">
+                    Image
+                  </th>
+                  <th className="px-2 py-4 text-center text-sm font-medium md:text-base">
+                    Product
+                  </th>
+                  <th className="px-2 py-4 text-center text-sm font-medium md:text-base">
+                    Price
+                  </th>
+                  <th className="px-2 py-4 text-center text-sm font-medium md:text-base">
+                    Quantity
+                  </th>
+                  <th className="px-2 py-4 text-center text-sm font-medium md:text-base">
+                    Subtotal
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems?.map((item: CartItem) => (
+                  <tr key={item.product._id} className="items-center">
+                    <td className="px-2 py-4">
+                      <div className="mx-auto w-fit bg-[#FFF9E5]">
+                        <Image
+                          src={item.product.imagePath}
+                          width={106}
+                          height={106}
+                          alt={item.product.name}
+                          className="size-20 object-cover md:size-28"
+                        />
+                      </div>
+                    </td>
+                    <td className="px-2 py-4 text-center text-sm md:text-base">
+                      {item.product.name}
+                    </td>
+                    <td className="px-2 py-4 text-center text-sm md:text-base">
+                      ${item.product.price.toFixed(2)}
+                    </td>
+                    <td className="px-2 py-4 text-center text-sm md:text-base">
+                      {item.quantity}
+                    </td>
+                    <td className="px-2 py-4 text-center text-sm md:text-base">
+                      ${(item.product.price * item.quantity).toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-start gap-12 bg-[#FFF9E5] pb-20 pt-6">
-          <p className="text-4xl font-semibold">Cart Totals</p>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 px-12">
-            <p className="text-start font-medium">Subtotal</p>
-            <p className="text-end">Rs. 250,000.00</p>
-            <p className="text-start font-medium">Total</p>
-            <p className="text-end text-xl font-medium text-[#B88E2F]">
-              Rs. 250,000.00
-            </p>
+
+        {/* Cart Totals */}
+        <div className="flex w-full min-w-[300px] flex-col items-center justify-start gap-8 bg-[#FFF9E5] p-6 lg:w-auto lg:pb-20 lg:pt-6">
+          <h2 className="text-xl font-semibold md:text-2xl lg:text-4xl">
+            Cart Totals
+          </h2>
+          <div className="grid w-full grid-cols-2 gap-4 px-4 lg:px-12">
+            <div className="text-start text-sm font-medium md:text-base">
+              Subtotal
+            </div>
+            <div className="text-end text-sm md:text-base">${total}</div>
+            <div className="text-start text-sm font-medium md:text-base">
+              Total
+            </div>
+            <div className="text-end text-base font-medium text-[#B88E2F] md:text-lg lg:text-xl">
+              ${total}
+            </div>
           </div>
-          <button className="mx-auto rounded-[10px] border border-black px-16 py-4">
-            <Link href={"/checkout/"}>Check Out</Link>
-          </button>
+          <Link
+            href="/checkout"
+            className="w-full rounded-[10px] border border-black px-8 py-3 text-center text-sm transition-colors hover:bg-black hover:text-white md:text-base lg:w-auto lg:px-16 lg:py-4"
+          >
+            Check Out
+          </Link>
         </div>
       </div>
       <Specialty />
     </div>
   );
-}
+};
 
-export default Cart
+export default Cart;

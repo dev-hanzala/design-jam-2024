@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mx-[100px] mb-[38px] mt-[98px] flex flex-col gap-12">
+    <footer className="mb-[38px] mt-[98px] flex w-screen flex-col items-center gap-12">
       <div className="flex items-center gap-[136px]">
         <p className="pb-[132px] pt-[108px]">
           400 University Drive Suite 200 Coral <br />

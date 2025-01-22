@@ -1,17 +1,9 @@
 "use client";
 import { createContext, useState, useContext } from "react";
-
-export interface Product {
-  _id: string;
-  name: string;
-  imagePath: string;
-  price: number;
-  category: string;
-  id: string;
-}
+import { productType } from "@/lib/types";
 
 export interface CartItem {
-  product: Product;
+  product: productType;
   quantity: number;
 }
 
@@ -20,8 +12,6 @@ interface CartState {
   total: number;
   addToCart: (item: CartItem) => void;
   removeFromCart: (item: CartItem) => void;
-  incrementQuantity: (item: CartItem) => void;
-  decrementQuantity: (item: CartItem) => void;
 }
 
 const CartContext = createContext<CartState | null>(null);
@@ -33,8 +23,24 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   const [total, setTotal] = useState(0);
 
   const addToCart = (item: CartItem) => {
-    setCartItems([...cartItems, item]);
-    setTotal(total + item.product.price * item.quantity);
+    const existingItemIndex = cartItems.findIndex(
+      (i) => i.product._id === item.product._id,
+    );
+
+    if (existingItemIndex !== -1) {
+      const newCartItems = [...cartItems];
+      newCartItems[existingItemIndex] = item;
+      setCartItems(newCartItems);
+      setTotal(
+        total -
+          cartItems[existingItemIndex].product.price *
+            cartItems[existingItemIndex].quantity +
+          item.product.price * item.quantity,
+      );
+    } else {
+      setCartItems([...cartItems, item]);
+      setTotal(total + item.product.price * item.quantity);
+    }
   };
 
   const removeFromCart = (item: CartItem) => {
@@ -45,22 +51,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     setTotal(total - item.product.price * item.quantity);
   };
 
-  const incrementQuantity = (item: CartItem) => {
-    const index = cartItems.indexOf(item);
-    const updatedCartItems = [...cartItems];
-    updatedCartItems[index].quantity -= 1;
-    setCartItems(updatedCartItems);
-    setTotal(total - updatedCartItems[index].product.price);
-  };
-
-  const decrementQuantity = (item: CartItem) => {
-    const index = cartItems.indexOf(item);
-    const updatedCartItems = [...cartItems];
-    updatedCartItems[index].quantity += 1;
-    setCartItems(updatedCartItems);
-    setTotal(total + updatedCartItems[index].product.price);
-  };
-
   return (
     <CartContext.Provider
       value={{
@@ -68,8 +58,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
         total,
         addToCart,
         removeFromCart,
-        incrementQuantity,
-        decrementQuantity,
       }}
     >
       {children}

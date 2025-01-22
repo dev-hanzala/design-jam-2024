@@ -2,12 +2,12 @@ import React from "react";
 import Picks from "@/components/Picks";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
+import { AddToCart } from "@/components/AddToCart";
+import { productType } from "@/lib/types";
 
 const Details = async ({ params }: { params: Promise<{ _id: string }> }) => {
   const id = (await params)._id;
-  const product = await client.fetch(`*[_id == "${id}"][0]`);
-
-  console.log(product);
+  const product: productType = await client.fetch(`*[_id == "${id}"][0]`);
   return (
     <>
       <div className="mx-auto w-full max-w-[1200px] border-b border-black">
@@ -26,16 +26,7 @@ const Details = async ({ params }: { params: Promise<{ _id: string }> }) => {
               <p className="py-4 text-5xl">{product.name}</p>
               <p className="text-2xl text-[#9F9F9F]">${product.price}</p>
               <p className="py-4 text-xs">{product.description}</p>
-              <div className="flex gap-4 py-8">
-                <div className="flex items-center justify-center gap-4 rounded-[15px] border border-black px-12 py-4">
-                  <button>-</button>
-                  <p>1</p>
-                  <button>+</button>
-                </div>
-                <button className="rounded-[15px] border border-black px-12 py-4">
-                  Add To Cart
-                </button>
-              </div>
+              <AddToCart product={product} />
             </div>
             <div className="flex gap-8 py-10 text-[#9F9F9F]">
               <div className="flex flex-col gap-3">

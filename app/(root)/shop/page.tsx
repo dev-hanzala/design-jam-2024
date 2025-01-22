@@ -26,7 +26,7 @@ export default async function Shop() {
       <div className="py-6" />
       <Filter />
       <div className="px-24">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="container mx-auto grid grid-cols-1 gap-4 pt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => (
             <Listing
               key={product._id}

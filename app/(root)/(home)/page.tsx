@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import Picks from "@/components/Picks";
 import NewArrivals from "@/components/NewArrivals";
-import FeaturedBlogs from "@/components/FeaturedBlogs";
 import RoundedButton from "@/components/RoundedButton";
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
         <Picks />
       </div>
       <NewArrivals />
-      <FeaturedBlogs />
       <div
         className="flex h-[450px] w-full flex-col items-center justify-center gap-[18px] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/Instagram/instagram.png)" }}
