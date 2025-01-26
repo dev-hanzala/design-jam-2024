@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { productType } from "@/lib/types";
 
 interface ListingProps {
-  image: string;
-  name: string;
-  price: string;
-  _id: string;
+  product: productType;
 }
 
-const Listing: React.FC<ListingProps> = ({ image, name, price, _id }) => {
+const Listing: React.FC<ListingProps> = ({
+  product: { imagePath, _id, name, price },
+}: ListingProps) => {
   return (
     <Link href={`/product/${_id}`} className="flex flex-col gap-3">
       <Image
-        src={image}
+        src={imagePath}
         width={300}
         height={300}
         alt={name}
