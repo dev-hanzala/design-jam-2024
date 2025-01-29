@@ -54,7 +54,7 @@ export default function CartDialog() {
                           {item.quantity} x{" "}
                         </span>
                         <span className="font-medium text-[#B88E2F]">
-                          Rs. {item.product.price.toFixed(2)}
+                          Rs. {Number(item.product.price).toFixed(2)}
                         </span>
                       </p>
                     </div>

@@ -17,13 +17,7 @@ const Picks = async () => {
     <div className="my-24 flex flex-col items-center justify-center gap-16">
       <div className="flex items-center justify-center gap-8">
         {products.map((product) => (
-          <Listing
-            key={product._id}
-            _id={product._id}
-            image={product.imagePath}
-            name={product.name}
-            price={String(product.price)}
-          />
+          <Listing key={product._id} product={product} />
         ))}
       </div>
       <UnderlinedButton>View More</UnderlinedButton>

@@ -54,13 +54,13 @@ const Cart = () => {
                       {item.product.name}
                     </td>
                     <td className="px-2 py-4 text-center text-sm md:text-base">
-                      ${item.product.price.toFixed(2)}
+                      ${Number(item.product.price).toFixed(2)}
                     </td>
                     <td className="px-2 py-4 text-center text-sm md:text-base">
                       {item.quantity}
                     </td>
                     <td className="px-2 py-4 text-center text-sm md:text-base">
-                      ${(item.product.price * item.quantity).toFixed(2)}
+                      ${(Number(item.product.price) * item.quantity).toFixed(2)}
                     </td>
                   </tr>
                 ))}

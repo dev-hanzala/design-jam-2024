@@ -33,13 +33,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       setCartItems(newCartItems);
       setTotal(
         total -
-          cartItems[existingItemIndex].product.price *
+          Number(cartItems[existingItemIndex].product.price) *
             cartItems[existingItemIndex].quantity +
-          item.product.price * item.quantity,
+          Number(item.product.price) * item.quantity,
       );
     } else {
       setCartItems([...cartItems, item]);
-      setTotal(total + item.product.price * item.quantity);
+      setTotal(total + Number(item.product.price) * item.quantity);
     }
   };
 
@@ -48,7 +48,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       (i) => i.product.id !== item.product.id,
     );
     setCartItems(updatedCartItems);
-    setTotal(total - item.product.price * item.quantity);
+    setTotal(total - Number(item.product.price) * item.quantity);
   };
 
   return (
