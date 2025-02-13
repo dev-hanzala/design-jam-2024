@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "@/components/Hero";
 import Featured from "@/components/Featured";
 import Picks from "@/components/Picks";
-import NewArrivals from "@/components/NewArrivals";
+// import NewArrivals from "@/components/NewArrivals";
 import RoundedButton from "@/components/RoundedButton";
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
         <Picks />
       </div>
-      <NewArrivals />
+      {/* <NewArrivals /> */}
       <div
         className="flex h-[450px] w-full flex-col items-center justify-center gap-[18px] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url(/Instagram/instagram.png)" }}
